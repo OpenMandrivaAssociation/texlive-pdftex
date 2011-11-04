@@ -1,3 +1,9 @@
+# revision 24308
+# category TLCore
+# catalog-ctan /systems/pdftex
+# catalog-date 2011-06-16 20:02:53 +0200
+# catalog-license gpl
+# catalog-version 1.40.11
 Name:		texlive-pdftex
 Version:	1.40.11
 Release:	1
@@ -105,6 +111,7 @@ LuaTeX).
 %doc %{_texmfdir}/doc/man/man1/pdfetex.man1.pdf
 %doc %{_mandir}/man1/pdftex.1*
 %doc %{_texmfdir}/doc/man/man1/pdftex.man1.pdf
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -117,6 +124,8 @@ mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf texmf-dist %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_mandir}/man1
 mv %{buildroot}%{_texmfdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
 mkdir -p %{buildroot}%{_texmf_fmtutil_d}
 cat > %{buildroot}%{_texmf_fmtutil_d}/pdftex <<EOF
 pdftex pdftex language.def -translate-file=cp227.tcx *pdfetex.ini
