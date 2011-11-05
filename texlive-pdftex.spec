@@ -15,8 +15,8 @@ Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pdftex.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pdftex.doc.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
-Requires(post):	texlive-tlpkg
-Requires:	texlive-kpathsea
+Requires(pre):	texlive-tlpkg
+Requires(post):	texlive-kpathsea
 Requires:	texlive-pdftex.bin
 Conflicts:	texlive-texmf <= 20110705-3
 Conflicts:	texlive-doc <= 20110705-3
@@ -35,8 +35,8 @@ LuaTeX).
     %_texmf_mktexlsr_pre
 
 %post
-    %_texmf_fmtutil_post
     %_texmf_mktexlsr_post
+    %_texmf_fmtutil_post
 
 %preun
     if [ $1 -eq 0 ]; then
@@ -46,8 +46,8 @@ LuaTeX).
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_fmtutil_post
 	%_texmf_mktexlsr_post
+	%_texmf_fmtutil_post
     fi
 
 #-----------------------------------------------------------------------
