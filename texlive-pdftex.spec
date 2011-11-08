@@ -6,7 +6,7 @@
 # catalog-version 1.40.11
 Name:		texlive-pdftex
 Version:	1.40.11
-Release:	1
+Release:	2
 Summary:	A TeX extension for direct creation of PDF
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/systems/pdftex
@@ -49,6 +49,8 @@ LuaTeX).
 	%_texmf_mktexlsr_post
 	%_texmf_fmtutil_post
     fi
+    rm -fr %{_texmfvardir}/fonts/map/pdftex
+    rm -fr %{_texmfvardir}/web2c/pdftex
 
 #-----------------------------------------------------------------------
 %files
