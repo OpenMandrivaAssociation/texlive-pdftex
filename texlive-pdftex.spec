@@ -1,12 +1,12 @@
-# revision 24308
+# revision 24563
 # category TLCore
 # catalog-ctan /systems/pdftex
-# catalog-date 2011-06-16 20:02:53 +0200
+# catalog-date 2011-11-09 15:33:34 +0100
 # catalog-license gpl
 # catalog-version 1.40.11
 Name:		texlive-pdftex
 Version:	1.40.11
-Release:	2
+Release:	3
 Summary:	A TeX extension for direct creation of PDF
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/systems/pdftex
@@ -17,10 +17,10 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
+Requires(post):	texlive-tetex
 Requires:	texlive-pdftex.bin
 Conflicts:	texlive-texmf <= 20110705-3
 Conflicts:	texlive-doc <= 20110705-3
-Requires(post):	texlive-tetex
 
 %description
 An extension of TeX which can be configured to directly
