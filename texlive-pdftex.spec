@@ -19,8 +19,6 @@ Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
 Requires(post):	texlive-tetex
 Requires:	texlive-pdftex.bin
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 An extension of TeX which can be configured to directly
@@ -30,24 +28,12 @@ pdfTeX (Plain TeX) and pdfLaTeX (LaTeX). ConTeXt was designed
 around use of pdfTeX (though it is now migrating towards
 LuaTeX).
 
-%pre
-    %_texmf_fmtutil_pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-    %_texmf_fmtutil_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_fmtutil_pre
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
-	%_texmf_fmtutil_post
+	%{_sbindir}/texlive.post
     fi
     rm -fr %{_texmfvardir}/fonts/map/pdftex
     rm -fr %{_texmfvardir}/web2c/pdftex
@@ -113,7 +99,6 @@ LuaTeX).
 %doc %{_texmfdir}/doc/man/man1/pdfetex.man1.pdf
 %doc %{_mandir}/man1/pdftex.1*
 %doc %{_texmfdir}/doc/man/man1/pdftex.man1.pdf
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -126,8 +111,6 @@ mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf texmf-dist %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_mandir}/man1
 mv %{buildroot}%{_texmfdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
 mkdir -p %{buildroot}%{_texmf_fmtutil_d}
 cat > %{buildroot}%{_texmf_fmtutil_d}/pdftex <<EOF
 pdftex pdftex language.def -translate-file=cp227.tcx *pdfetex.ini
