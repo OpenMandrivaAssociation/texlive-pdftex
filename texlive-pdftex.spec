@@ -6,7 +6,7 @@
 # catalog-version 1.40.11
 Name:		texlive-pdftex
 Version:	1.40.11
-Release:	6
+Release:	7
 Summary:	A TeX extension for direct creation of PDF
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/systems/pdftex
@@ -113,6 +113,8 @@ mkdir -p %{buildroot}%{_mandir}/man1
 mv %{buildroot}%{_texmfdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
 mkdir -p %{buildroot}%{_texmf_fmtutil_d}
 cat > %{buildroot}%{_texmf_fmtutil_d}/pdftex <<EOF
+#
+# from pdftex:
 pdftex pdftex language.def -translate-file=cp227.tcx *pdfetex.ini
 etex pdftex language.def -translate-file=cp227.tcx *etex.ini
 pdfetex pdftex language.def -translate-file=cp227.tcx *pdfetex.ini
