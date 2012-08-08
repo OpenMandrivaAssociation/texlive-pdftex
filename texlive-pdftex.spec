@@ -1,4 +1,4 @@
-# revision 26213
+# revision 27321
 # category TLCore
 # catalog-ctan /systems/pdftex
 # catalog-date 2011-11-09 15:33:34 +0100
@@ -6,7 +6,7 @@
 # catalog-version 1.40.11
 Name:		texlive-pdftex
 Version:	1.40.11
-Release:	9
+Release:	10
 Summary:	A TeX extension for direct creation of PDF
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/systems/pdftex
@@ -40,10 +40,10 @@ LuaTeX).
 
 #-----------------------------------------------------------------------
 %files
+%{_texmfdistdir}/scripts/simpdftex/simpdftex
 %{_texmfdir}/fonts/map/pdftex/updmap/pdftex.map
 %{_texmfdir}/fonts/map/pdftex/updmap/pdftex_dl14.map
 %{_texmfdir}/fonts/map/pdftex/updmap/pdftex_ndl14.map
-%{_texmfdir}/scripts/simpdftex/simpdftex
 %{_texmfdir}/tex/generic/config/pdftex-dvi.tex
 %{_texmfdir}/tex/generic/config/pdftexconfig.tex
 %{_texmfdir}/tex/generic/pdftex/glyphtounicode.tex
