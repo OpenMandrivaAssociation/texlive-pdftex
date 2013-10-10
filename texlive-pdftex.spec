@@ -1,4 +1,4 @@
-# revision 27932
+# revision 31838
 # category TLCore
 # catalog-ctan /systems/pdftex
 # catalog-date 2011-11-09 15:33:34 +0100
@@ -6,7 +6,7 @@
 # catalog-version 1.40.11
 Name:		texlive-pdftex
 Version:	1.40.11
-Release:	11
+Release:	12
 Summary:	A TeX extension for direct creation of PDF
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/systems/pdftex
@@ -40,14 +40,18 @@ LuaTeX).
 
 #-----------------------------------------------------------------------
 %files
+%{_texmfdistdir}/fonts/map/pdftex/updmap/pdftex.map
+%{_texmfdistdir}/fonts/map/pdftex/updmap/pdftex_dl14.map
+%{_texmfdistdir}/fonts/map/pdftex/updmap/pdftex_ndl14.map
 %{_texmfdistdir}/scripts/simpdftex/simpdftex
-%{_texmfdir}/fonts/map/pdftex/updmap/pdftex.map
-%{_texmfdir}/fonts/map/pdftex/updmap/pdftex_dl14.map
-%{_texmfdir}/fonts/map/pdftex/updmap/pdftex_ndl14.map
-%{_texmfdir}/tex/generic/config/pdftex-dvi.tex
-%{_texmfdir}/tex/generic/config/pdftexconfig.tex
-%{_texmfdir}/tex/generic/pdftex/glyphtounicode.tex
+%{_texmfdistdir}/tex/generic/config/pdftex-dvi.tex
+%{_texmfdistdir}/tex/generic/config/pdftexconfig.tex
+%{_texmfdistdir}/tex/generic/pdftex/glyphtounicode.tex
 %_texmf_fmtutil_d/pdftex
+%doc %{_mandir}/man1/pdfetex.1*
+%doc %{_texmfdistdir}/doc/man/man1/pdfetex.man1.pdf
+%doc %{_mandir}/man1/pdftex.1*
+%doc %{_texmfdistdir}/doc/man/man1/pdftex.man1.pdf
 %doc %{_texmfdistdir}/doc/pdftex/Announcement-1.40.2
 %doc %{_texmfdistdir}/doc/pdftex/NEWS
 %doc %{_texmfdistdir}/doc/pdftex/README
@@ -95,10 +99,6 @@ LuaTeX).
 %doc %{_texmfdistdir}/doc/pdftex/thanh/ext/mktfm8z
 %doc %{_texmfdistdir}/doc/pdftex/thanh/ext/protcode.tex
 %doc %{_texmfdistdir}/doc/pdftex/thanh/ext/ufntinst.sty
-%doc %{_mandir}/man1/pdfetex.1*
-%doc %{_texmfdir}/doc/man/man1/pdfetex.man1.pdf
-%doc %{_mandir}/man1/pdftex.1*
-%doc %{_texmfdir}/doc/man/man1/pdftex.man1.pdf
 
 #-----------------------------------------------------------------------
 %prep
@@ -108,9 +108,9 @@ LuaTeX).
 
 %install
 mkdir -p %{buildroot}%{_datadir}
-cp -fpar texmf texmf-dist %{buildroot}%{_datadir}
+cp -fpar texmf-dist %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_mandir}/man1
-mv %{buildroot}%{_texmfdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
+mv %{buildroot}%{_texmfdistdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
 mkdir -p %{buildroot}%{_texmf_fmtutil_d}
 cat > %{buildroot}%{_texmf_fmtutil_d}/pdftex <<EOF
 #
