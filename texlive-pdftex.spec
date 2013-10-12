@@ -6,7 +6,7 @@
 # catalog-version 1.40.11
 Name:		texlive-pdftex
 Version:	1.40.11
-Release:	12
+Release:	13
 Summary:	A TeX extension for direct creation of PDF
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/systems/pdftex
@@ -16,7 +16,7 @@ Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pdftex.doc.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+Requires(post):	kpathsea
 Requires(post):	texlive-tetex
 Requires:	texlive-pdftex.bin
 
