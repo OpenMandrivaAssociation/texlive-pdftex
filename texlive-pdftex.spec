@@ -1,4 +1,4 @@
-# revision 33060
+# revision 34215
 # category TLCore
 # catalog-ctan /systems/pdftex
 # catalog-date 2011-11-09 15:33:34 +0100
@@ -6,7 +6,7 @@
 # catalog-version 1.40.11
 Name:		texlive-pdftex
 Version:	1.40.11
-Release:	22
+Release:	23
 Summary:	A TeX extension for direct creation of PDF
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/systems/pdftex
@@ -40,9 +40,12 @@ LuaTeX).
 
 #-----------------------------------------------------------------------
 %files
+%{_texmfdistdir}/fonts/map/dvips/dummy-space/dummy-space.map
 %{_texmfdistdir}/fonts/map/pdftex/updmap/pdftex.map
 %{_texmfdistdir}/fonts/map/pdftex/updmap/pdftex_dl14.map
 %{_texmfdistdir}/fonts/map/pdftex/updmap/pdftex_ndl14.map
+%{_texmfdistdir}/fonts/tfm/public/pdftex/dummy-space.tfm
+%{_texmfdistdir}/fonts/type1/public/pdftex/dummy-space.pfb
 %{_texmfdistdir}/scripts/simpdftex/simpdftex
 %{_texmfdistdir}/tex/generic/config/pdftex-dvi.tex
 %{_texmfdistdir}/tex/generic/config/pdftexconfig.tex
@@ -53,7 +56,7 @@ LuaTeX).
 %doc %{_texmfdistdir}/doc/man/man1/pdfetex.man1.pdf
 %doc %{_mandir}/man1/pdftex.1*
 %doc %{_texmfdistdir}/doc/man/man1/pdftex.man1.pdf
-%doc %{_texmfdistdir}/doc/pdftex/Announcement-1.40.2
+%doc %{_texmfdistdir}/doc/pdftex/01-fake-interword-space/fake-interword-space.tex
 %doc %{_texmfdistdir}/doc/pdftex/NEWS
 %doc %{_texmfdistdir}/doc/pdftex/README
 %doc %{_texmfdistdir}/doc/pdftex/manual/ChangeLog
