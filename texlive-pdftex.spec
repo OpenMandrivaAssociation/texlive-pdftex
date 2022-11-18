@@ -1,12 +1,13 @@
 Name:		texlive-pdftex
 Version:	64690
-Release:	1
+Release:	2
 Summary:	A TeX extension for direct creation of PDF
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/systems/pdftex
 License:	GPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pdftex.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pdftex.doc.r%{version}.tar.xz
+Source2:	https://raw.githubusercontent.com/latex3/tex-ini-files/main/pdftexconfig.tex
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -38,7 +39,7 @@ fi
 %{_texmfdistdir}/fonts/tfm/public/pdftex
 %{_texmfdistdir}/fonts/type1/public/pdftex
 %{_texmfdistdir}/scripts/simpdftex
-%{_texmfdistdir}/tex/generic/config/pdftex-dvi.tex
+%{_texmfdistdir}/tex/generic/config/*
 %{_texmfdistdir}/tex/generic/pdftex
 %_texmf_fmtutil_d/pdftex
 %doc %{_mandir}/man1/*.1*
@@ -64,3 +65,4 @@ pdftex pdftex language.def -translate-file=cp227.tcx *pdfetex.ini
 etex pdftex language.def -translate-file=cp227.tcx *etex.ini
 pdfetex pdftex language.def -translate-file=cp227.tcx *pdfetex.ini
 EOF
+cp %{S:2} %{buildroot}%{_texmfdistdir}/tex/generic/config/
