@@ -1,6 +1,6 @@
 Name:		texlive-pdftex
 Version:	64690
-Release:	2
+Release:	3
 Summary:	A TeX extension for direct creation of PDF
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/systems/pdftex
