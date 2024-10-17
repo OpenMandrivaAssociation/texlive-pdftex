@@ -3,7 +3,7 @@ Version:	71605
 Release:	1
 Summary:	A TeX extension for direct creation of PDF
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/systems/pdftex
+URL:		https://www.ctan.org/tex-archive/systems/pdftex
 License:	GPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pdftex.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pdftex.doc.r%{version}.tar.xz
