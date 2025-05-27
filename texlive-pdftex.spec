@@ -1,5 +1,5 @@
 Name:		texlive-pdftex
-Version:	71605
+Version:	74113
 Release:	1
 Summary:	A TeX extension for direct creation of PDF
 Group:		Publishing
